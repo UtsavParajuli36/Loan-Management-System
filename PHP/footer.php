@@ -22,14 +22,14 @@
 
         <div class="footer-section">
         <h3>Find Us</h3>
-        <p>Address: Golfutar Chowk, Kathmandu</p> 
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1765.4546030192753!2d85.34536058652614!3d27.750946317063118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1952ed5b2007%3A0xc1b511472f391fc0!2sNIC%20ASIA%20Bank%20Ltd.%20Golfutar%20Branch!5e0!3m2!1sen!2snp!4v1712152875927!5m2!1sen!2snp" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+        <p>Address: Kathmandu</p> 
+                 <!--Iframe goes here  -->
         </div>
 
         <div class="footer-section">
         <h3>Contact Info</h3>
-        <p>Email: sunaulomahankal@gmail.com</p>
-        <p>Phone: 01-4372111</p>
+        <p>Email: smsc@gmail.com</p>
+        <p>Phone: 01-4311111</p>
             <div class="social-icons">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
@@ -39,7 +39,7 @@
     
     </div>
     <div class="copyright">
-        <p>&copy; <?php echo date("Y"); ?> Sunaulo Mahankal Saving and Credit Cooperative Limited. All Rights Reserved.</p>
+        <p>&copy; <?php echo date("Y"); ?> SMSC. All Rights Reserved.</p>
     </div>
 </footer>
 
