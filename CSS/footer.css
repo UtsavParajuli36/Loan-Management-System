@@ -1,0 +1,60 @@
+body{
+    margin: 0;
+    background-image: url(../IMAGES/background.png);
+}
+
+.main{
+    display: flex;
+    padding: 20px;
+    /* justify-content: space-around; */
+
+}
+
+.footer-section {
+    flex:1;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.footer-section:last-child {
+    margin-right: 0;
+}
+
+.footer-section h3 {
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 20px;
+}
+
+ul li a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+ul li a:hover {
+    color: green;
+}
+
+.social-icons a {
+    color: black;
+    margin: 0 10px;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: rgb(250, 2, 109);
+} 
+
+.copyright { 
+    text-align: center;
+}
