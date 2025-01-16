@@ -1,0 +1,102 @@
+.main{
+    display: flex;
+}
+#sidebar {
+    position: fixed;
+    width: 250px;
+    height: 95%;
+    background: #111 ;
+    color: #fff;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding-top: 50px;
+    border-radius: 20px;
+    border:2px solid red;
+    overflow-y: auto;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+#sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+#sidebar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+#sidebar h1{
+    text-align: center;
+    /* margin-bottom: 50px; */
+    padding:25px;
+}
+#sidebar ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+#sidebar ul li {
+    padding: 10px;
+    border-bottom: 1px solid #555;
+}
+#sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#content {
+    margin-left: 300px;
+    margin-top: 100px;
+    height: auto;
+    width: auto;
+    /* border: 1px solid black; */
+}
+/* Style for login button */
+#login-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+/* Style for profile menu */
+.profile-menu {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+.profile-menu a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+}
+.profile-menu a:hover {
+    background-color: #f5f5f5;
+}
+
+/* Button */
+#myButton {
+    position: fixed;  /* Fix the button to the viewport */
+    bottom: 10px;     /* Set distance from bottom edge */
+    right: 10px;      /* Set distance from right edge */
+    padding: 10px 20px; /* Add some padding inside the button */
+    background-color:#007bff;  /* Set button background color */
+    border: none;          /* Remove default border */
+    border-radius: 5px;   /* Add rounded corners */
+    cursor: pointer;       /* Change cursor to pointer on hover */
+  }
+
+#myButton a{
+    color: white;
+}
+
+#myButton a:hover{
+    color: black;
+    text-decoration: none;
+}
+
+
+  
