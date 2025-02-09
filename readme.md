@@ -4,6 +4,7 @@ This project is made completely for educational purposes only.
 ------------------------------------------------------------------------------
 The workflow for the system is as:
 
+### Open homepage.php
 1. Register yourself as a member.
 2. Login as a member.
 3. Inside the dashboard, you will see a sidebar with various links.
