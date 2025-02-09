@@ -1,22 +1,35 @@
 <?php
-        // $conn=mysqli_connect('localhost','root','');
+        // Creating a new database
+        $sql1="CREATE DATABASE project";
+        if(mysqli_query($conn,$sql1)){
+            echo "Database Created Successfully.";
+        }
+        else{
+            echo "Database could not be created.";
+        }
+
         // To use the database
-        $conn=mysqli_connect('localhost','root','','SMSC_project');
+        $conn=mysqli_connect('localhost','root','','project');
         if(!$conn){
             die("Connection failed: ".
             mysqli_connect_errno() );
         }
 
-        // Creating a new database
-        // $sql1="CREATE DATABASE SMSC_project";
-        // if(mysqli_query($conn,$sql1)){
-        //     echo "Database Created Successfully.";
-        // }
-        // else{
-        //     echo "Database could not be created.";
-        // }
-
         // Creating new tables
+        $sql7="CREATE TABLE accounts
+            (
+            account_no VARCHAR(10) PRIMARY KEY,
+            account_type VARCHAR(40) NOT NULL,
+            interest_rate FLOAT NOT NULL,
+            balance DECIMAL(10,2) NOT NULL
+            )";
+        if(mysqli_query($conn,$sql7)){
+            echo "Table accounts created successfully.";
+        }
+        else{
+             echo "Table accounts not created.";
+        }
+
         $sql2="CREATE TABLE members
             (
             member_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -35,6 +48,53 @@
         else{
              echo "Table members not created.";
         }
+
+        $sql8="CREATE TABLE admins
+        (
+            admin_id INT AUTO_INCREMENT PRIMARY KEY,
+            admin_name VARCHAR(30) NOT NULL,
+            admin_email VARCHAR(50) NOT NULL,
+            password VARCHAR(30) NOT NULL
+        )";
+        if(mysqli_query($conn,$sql8)){
+            echo "Table admins created successfully.";
+        }
+        else{
+             echo "Table admins not created.";
+        } 
+
+        $sql4="CREATE TABLE collaterals
+            (
+            collateral_id INT AUTO_INCREMENT PRIMARY KEY,
+            collateral_type VARCHAR(20) NOT NULL,
+            collateral_value BIGINT NOT NULL,
+            member_id int not null,
+            INDEX(member_id),
+                FOREIGN KEY (member_id) REFERENCES members(member_id)
+            )";
+        if(mysqli_query($conn,$sql4)){
+            echo "Table collaterals created successfully.";
+        }
+        else{
+             echo "Table collaterals not created.";
+        }
+
+        $sql9="CREATE TABLE backers
+            (
+            backer_id INT AUTO_INCREMENT PRIMARY KEY,
+            member_id INT NOT NULL,
+            account_no_of_backer INT NOT NULL,
+            INDEX(member_id, account_no_of_backer),
+                FOREIGN KEY (member_id) REFERENCES members(member_id),
+                FOREIGN KEY (account_no_of_backer) REFERENCES accounts(account_no)
+            )";
+        if(mysqli_query($conn,$sql9)){
+            echo "Table backers created successfully.";
+        }
+        else{
+             echo "Table backers not created.";
+        }
+
         $sql3="CREATE TABLE loans
         (
             loan_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -59,21 +119,7 @@
         else{
              echo "Table loans not created.";
         }
-        $sql4="CREATE TABLE collaterals
-            (
-            collateral_id INT AUTO_INCREMENT PRIMARY KEY,
-            collateral_type VARCHAR(20) NOT NULL,
-            collateral_value BIGINT NOT NULL,
-            member_id int not null,
-            INDEX(member_id),
-                FOREIGN KEY (member_id) REFERENCES members(member_id)
-            )";
-        if(mysqli_query($conn,$sql4)){
-            echo "Table collaterals created successfully.";
-        }
-        else{
-             echo "Table collaterals not created.";
-        }
+        
         $sql5="CREATE TABLE description
             (
             desc_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -104,47 +150,6 @@
         else{
              echo "Table emi not created.";
         } 
-        $sql7="CREATE TABLE accounts
-            (
-            account_no VARCHAR(10) PRIMARY KEY,
-            account_type VARCHAR(40) NOT NULL,
-            interest_rate FLOAT NOT NULL,
-            balance DECIMAL(10,2) NOT NULL
-            )";
-        if(mysqli_query($conn,$sql7)){
-            echo "Table accounts created successfully.";
-        }
-        else{
-             echo "Table accounts not created.";
-        } 
-        $sql8="CREATE TABLE admins
-        (
-            admin_id INT AUTO_INCREMENT PRIMARY KEY,
-            admin_name VARCHAR(30) NOT NULL,
-            admin_email VARCHAR(50) NOT NULL,
-            password VARCHAR(30) NOT NULL
-        )";
-        if(mysqli_query($conn,$sql8)){
-            echo "Table admins created successfully.";
-        }
-        else{
-             echo "Table admins not created.";
-        } 
-        $sql9="CREATE TABLE backers
-            (
-            backer_id INT AUTO_INCREMENT PRIMARY KEY,
-            member_id INT NOT NULL,
-            account_no_of_backer INT NOT NULL,
-            INDEX(member_id, account_no_of_backer),
-                FOREIGN KEY (member_id) REFERENCES members(member_id),
-                FOREIGN KEY (account_no_of_backer) REFERENCES accounts(account_no)
-            )";
-        if(mysqli_query($conn,$sql9)){
-            echo "Table backers created successfully.";
-        }
-        else{
-             echo "Table backers not created.";
-        }
 
         mysqli_close($conn);
 ?>
